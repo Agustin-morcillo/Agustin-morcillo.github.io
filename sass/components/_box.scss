@@ -1,0 +1,68 @@
+@use "../abs/colors";
+@use "../abs/shadows";
+@use "../abs/fonts";
+@use "../abs/spaces";
+@use "../abs/breakpoints" as b;
+@use "../layout/structure";
+
+.box-container {
+  @include structure.grid;
+  justify-content: center;
+  margin-top: map-get(spaces.$spaces, "x-large");
+  margin-bottom: map-get(spaces.$spaces, "x-large");
+
+  @include b.breakpoint-down(large) {
+    width: 100%;
+    gap: 3rem;
+  }
+
+  @include b.breakpoint-down(small) {
+    padding-left: map-get(spaces.$spaces, "medium");
+    padding-right: map-get(spaces.$spaces, "medium");
+  }
+}
+
+.box {
+  width: 25%;
+  background-color: rgba(colors.$color-white, 0.9);
+  text-align: center;
+  border-radius: 3px;
+
+  padding: 2.5rem;
+  box-shadow: map-get(shadows.$shadows, "subtle");
+  transition: all 400ms;
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+    box-shadow: map-get(shadows.$shadows, "default");
+  }
+
+  @include b.breakpoint-down(large) {
+    max-width: 18.5rem;
+  }
+
+  @include b.breakpoint-down(medium) {
+    width: 100%;
+    max-width: none;
+  }
+
+  &__icon {
+    display: block;
+    font-size: map-get(fonts.$font-size, "x-large");
+    background: linear-gradient(
+      to right,
+      rgba(colors.$color-primary, 0.8),
+      rgba(colors.$color-primary-dark, 0.8)
+    );
+    color: transparent;
+    background-clip: text;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__paragraph {
+    font-size: map-get(fonts.$font-size, "small");
+  }
+}

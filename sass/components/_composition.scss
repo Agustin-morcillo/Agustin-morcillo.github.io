@@ -1,0 +1,95 @@
+@use "../abs/colors";
+@use "../abs/breakpoints" as b;
+@use "../abs/shadows";
+@use "../abs/spaces";
+@use "../layout/structure";
+
+.composition {
+  @include structure.grid;
+
+  //Text block
+  &__text-container {
+    width: 50%;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: map-get(spaces.$spaces, "medium");
+      }
+    }
+
+    @include b.breakpoint-down(medium) {
+      width: 100%;
+    }
+  }
+
+  //Image block
+  &__images-container {
+    width: 50%;
+    position: relative;
+
+    @include b.breakpoint-down(medium) {
+      width: 100%;
+      display: flex;
+    }
+  }
+
+  //images
+  &__image {
+    width: 55%;
+    box-shadow: map-get(shadows.$shadows, "default");
+    border-radius: 2px;
+    outline-offset: 2rem;
+    position: absolute;
+    z-index: 10;
+    transition: all 200ms;
+
+    @include b.breakpoint-down(medium) {
+      position: relative;
+      width: 33.33%;
+    }
+
+    &:hover {
+      outline: 1.5rem solid colors.$color-primary;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 40rem rgba(colors.$color-black, 0.5);
+      z-index: 20;
+    }
+
+    &:not(:hover) {
+      transform: scale(0.95);
+    }
+
+    //Specific Images
+    &--1 {
+      left: 0;
+      top: -2rem;
+
+      @include b.breakpoint-down(medium) {
+        top: 0;
+        transform: scale(1.2);
+      }
+    }
+
+    &--2 {
+      right: 0;
+      top: 2rem;
+
+      @include b.breakpoint-down(medium) {
+        top: -1rem;
+        transform: scale(1.3);
+        z-index: 100;
+      }
+    }
+
+    &--3 {
+      left: 20%;
+      top: 10rem;
+
+      @include b.breakpoint-down(medium) {
+        top: 0;
+        left: 0;
+        transform: scale(1.1);
+      }
+    }
+  }
+}

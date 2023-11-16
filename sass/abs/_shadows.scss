@@ -1,0 +1,7 @@
+@use "./colors";
+
+$shadows: (
+  "subtle": 0 1rem 2rem rgba(colors.$color-black, 0.2),
+  "default": 0 1rem 2rem rgba(colors.$color-black, 0.4),
+  "intense": 0 1.5rem 4rem rgba(colors.$color-black, 0.4),
+);

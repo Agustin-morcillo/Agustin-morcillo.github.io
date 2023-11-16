@@ -1,0 +1,29 @@
+@use "../abs/colors";
+@use "../abs/fonts";
+@use "../abs/spaces";
+
+body {
+  font-size: map-get(fonts.$font-size, "default");
+  font-family: fonts.$font-stack;
+  font-weight: map-get(fonts.$font-weight, "regular");
+  color: colors.$color-grey-dark;
+  line-height: 1.7;
+}
+
+h1 {
+  font-size: map-get(fonts.$font-size, "x-large");
+  font-weight: map-get(fonts.$font-weight, "regular");
+  margin-bottom: map-get(spaces.$spaces, "large");
+}
+
+h2 {
+  font-size: map-get(fonts.$font-size, "large");
+  font-weight: map-get(fonts.$font-weight, "bold");
+}
+
+h3 {
+  font-size: map-get(fonts.$font-size, "default");
+  font-weight: map-get(fonts.$font-weight, "bold");
+  color: colors.$color-grey-dark;
+  margin-bottom: map-get(spaces.$spaces, "small");
+}

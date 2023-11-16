@@ -1,0 +1,38 @@
+@use "../abs/breakpoints" as b;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a,
+a:active,
+a:visited,
+a:link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include b.breakpoint-up(xlarge) {
+    font-size: 75%;
+  }
+
+  @include b.breakpoint-down(medium) {
+    font-size: 56.25%;
+  }
+
+  @include b.breakpoint-down(small) {
+    font-size: 50%;
+  }
+}

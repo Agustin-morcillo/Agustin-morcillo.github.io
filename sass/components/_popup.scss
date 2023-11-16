@@ -1,0 +1,129 @@
+@use "../abs/colors";
+@use "../abs/fonts";
+@use "../abs/breakpoints" as b;
+@use "../abs/shadows";
+@use "../abs/spaces";
+@use "../layout/structure";
+
+.popup {
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(colors.$color-black, 0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: all 900ms;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    width: 75%;
+    min-width: 90rem;
+    background-color: colors.$color-white;
+    border-radius: 3px;
+    box-shadow: 0 2rem 4rem rgba(colors.$color-black, 0.2);
+    display: flex;
+    position: relative;
+
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 500ms 200ms;
+
+    z-index: 3500;
+
+    @include b.breakpoint-down(medium) {
+      width: 90%;
+      max-height: 70rem;
+      overflow-x: scroll;
+      flex-direction: column;
+      min-width: auto;
+    }
+  }
+
+  &__images-container {
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include b.breakpoint-down(medium) {
+      width: 100%;
+      flex-direction: row;
+    }
+  }
+
+  &__image {
+    @include b.breakpoint-down(medium) {
+      width: 50%;
+    }
+  }
+
+  &__text-container {
+    width: 66.66%;
+    padding: 3rem 5rem;
+    margin-block: auto;
+
+    @include b.breakpoint-down(medium) {
+      width: 100%;
+      margin: 0;
+    }
+
+    @include b.breakpoint-down(small) {
+      padding: 3rem 3rem;
+    }
+  }
+
+  &__paragraph {
+    font-size: map-get(fonts.$font-size, "tiny");
+    column-count: 2;
+    column-rule: 1px solid colors.$color-grey-light-2;
+    column-gap: 4rem;
+    hyphens: auto;
+
+    @include b.breakpoint-down(medium) {
+      column-count: auto;
+      column-gap: normal;
+    }
+  }
+
+  &__close-btn {
+    font-size: map-get(fonts.$font-size, "large");
+    position: absolute;
+    top: 1rem;
+    right: 2.5rem;
+    display: inline-block;
+    color: colors.$color-grey-dark;
+
+    &:hover {
+      color: colors.$color-primary;
+    }
+  }
+
+  &:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &:target &__content {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.content-visible {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}

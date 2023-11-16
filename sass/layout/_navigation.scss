@@ -1,0 +1,171 @@
+@use "../abs/colors";
+@use "../abs/fonts";
+@use "../abs/breakpoints" as b;
+@use "../abs/z-index" as index;
+@use "../abs/shadows";
+
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    min-height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    background-color: colors.$color-white;
+    box-shadow: map-get(shadows.$shadows, "default");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: map-get(index.$z-index, "3000");
+
+    @include b.breakpoint-down(medium) {
+      top: 3rem;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 3.5rem;
+    height: 0.2rem;
+    background-color: colors.$color-grey-dark;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      transition: all 300ms;
+    }
+
+    &::before {
+      background-color: colors.$color-grey-dark;
+      top: -1rem;
+    }
+
+    &::after {
+      background-color: colors.$color-grey-dark;
+      top: 1rem;
+    }
+  }
+
+  &__checkbox:checked + label &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + label &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + label &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  &__button:hover &__icon::before {
+    top: -1.1rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1.1rem;
+  }
+
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background: radial-gradient(
+      colors.$color-primary-light,
+      colors.$color-primary-dark
+    );
+    transition: all 400ms;
+    z-index: map-get(index.$z-index, "2000");
+
+    @include b.breakpoint-down(medium) {
+      top: 3rem;
+    }
+  }
+
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__nav {
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: map-get(index.$z-index, "2500");
+  }
+
+  &__checkbox:checked ~ &__nav {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__list {
+    list-style: none;
+    text-align: center;
+    transform: translateX(-80rem);
+    transition: all 400ms;
+  }
+
+  &__checkbox:checked ~ &__nav &__list {
+    transform: translateX(0);
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__link {
+    &:active,
+    &:link,
+    &:visited {
+      display: block;
+      color: colors.$color-white;
+      text-decoration: none;
+      font-size: map-get(fonts.$font-size, "large");
+      font-weight: map-get(fonts.$font-weight, "thin");
+      text-transform: uppercase;
+      padding: 2rem 2rem;
+      background: linear-gradient(
+        120deg,
+        transparent 0,
+        transparent 50%,
+        colors.$color-white 50%
+      );
+      background-size: 220%;
+      transition: all 400ms;
+    }
+
+    span {
+      padding-right: 1rem;
+    }
+
+    &:hover {
+      background: linear-gradient(120deg, colors.$color-white 50%);
+      background-position: 100%;
+      color: colors.$color-primary;
+      transform: translateX(1rem);
+    }
+  }
+}

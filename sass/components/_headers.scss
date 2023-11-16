@@ -1,0 +1,34 @@
+@use "../abs/colors";
+@use "../abs/shadows";
+@use "../layout/structure";
+
+.header {
+  &-container {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &__secondary {
+    display: inline-block;
+    text-transform: uppercase;
+    background: linear-gradient(
+      to right,
+      colors.$color-primary,
+      colors.$color-primary-dark
+    );
+    color: transparent;
+    text-wrap: balance;
+    background-clip: text;
+    transition: all 300ms;
+
+    &:hover {
+      transform: skewY(2deg) skewX(15deg) scale(1.1);
+      box-shadow: map-get(shadows.$shadows, "ligth");
+    }
+  }
+
+  &__tertiary {
+    text-transform: uppercase;
+  }
+}

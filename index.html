@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="img/logos/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/icon-font.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Natours: Feel the Nature</title>
+    <meta
+      name="description"
+      content="
+    Art and romance in every corner, surrounded by water with the same mystery as its masks, this destination invites us to enjoy every corner"
+    />
+  </head>
+  <body>
+    <div class="navigation">
+      <input type="checkbox" id="nav-toggle" class="navigation__checkbox" />
+      <label for="nav-toggle" class="navigation__button">
+        <span class="navigation__icon"></span>
+      </label>
+
+      <div class="navigation__background"></div>
+
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"
+              ><span>01</span>About Natours
+            </a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"
+              ><span>02</span>Your benefits
+            </a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"
+              ><span>03</span>Popular tours
+            </a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>04</span>Stories </a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>05</span>Book now </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <header class="header">
+      <div class="header__logo-container">
+        <img
+          src="img/logos/natours-white-logo.png"
+          alt="Natours white logo"
+          class="header__logo"
+        />
+      </div>
+      <div class="header__content">
+        <h1 class="header__primary">
+          <span class="header__primary--main">Outdoors</span>
+          <span class="header__primary--sub">Is where life happends</span>
+        </h1>
+        <a
+          href="#"
+          class="btn__rounded btn__rounded--white btn__rounded--animated"
+          >Discover our tours</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="about-section">
+        <div class="header-container u-text-center">
+          <h2 class="header__secondary u-margin-bottom-xl">
+            Exciting tours for adventurous people
+          </h2>
+        </div>
+
+        <div class="composition u-center-position">
+          <div class="composition__text-container">
+            <h3 class="header__tertiary">
+              You're going to fall in love with nature
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+              ipsum sapiente aspernatur libero repellat quis consequatur ducimus
+              quam nisi exercitationem omnis earum qui.
+            </p>
+
+            <h3 class="header__tertiary">
+              Live adventures like you never have before
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores nulla deserunt voluptatum nam.
+            </p>
+            <a href="#" class="btn__text btn__text--green">Learn more &rarr;</a>
+          </div>
+          <div class="composition__images-container">
+            <img
+              srcset="
+                img/about/composition-forest-mobile.jpg 143w,
+                img/about/composition-forest.jpg        356w
+              "
+              sizes="(max-width:56.25em) 16vw, 300px"
+              alt="forest"
+              class="composition__image composition__image--1"
+              src="img/about/composition-forest.jpg"
+            />
+            <img
+              srcset="
+                img/about/composition-route-mobile.jpg 143w,
+                img/about/composition-route.jpg        356w
+              "
+              sizes="(max-width:56.25em) 16vw, 300px"
+              src="img/about/composition-route.jpg"
+              alt="route with mountains"
+              class="composition__image composition__image--2"
+            />
+            <img
+              srcset="
+                img/about/composition-mountain-mobile.jpg 143w,
+                img/about/composition-mountain.jpg        356w
+              "
+              sizes="(max-width:56.25em) 16vw, 300px"
+              src="img/about/composition-mountain.jpg"
+              alt="mountain trail"
+              class="composition__image composition__image--3"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits-section">
+        <div class="box-container u-center-position">
+          <div class="box">
+            <span class="box__icon icon-basic-world"></span>
+            <h3 class="box__title">Explore the world</h3>
+            <p class="box__paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+              ipsum sapiente aspernatur.
+            </p>
+          </div>
+
+          <div class="box">
+            <span class="box__icon icon-basic-compass"></span>
+            <h3 class="box__title">Meet nature</h3>
+            <p class="box__paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+              ipsum sapiente aspernatur.
+            </p>
+          </div>
+
+          <div class="box">
+            <span class="box__icon icon-basic-map"></span>
+            <h3 class="box__title">Find your way</h3>
+            <p class="box__paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+              ipsum sapiente aspernatur.
+            </p>
+          </div>
+
+          <div class="box">
+            <span class="box__icon icon-basic-heart"></span>
+            <h3 class="box__title">Live a healthier life</h3>
+            <p class="box__paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+              ipsum sapiente aspernatur.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="tours-section">
+        <div class="header-container u-text-center">
+          <h2 class="header__secondary u-margin-bottom-xl">
+            Most popular tours
+          </h2>
+        </div>
+
+        <div class="card-container u-center-position">
+          <div class="card">
+            <div class="card__side card__side--front">
+              <div class="card__image card__image--1"></div>
+              <h3 class="card__title">
+                <span class="card__title-span card__title-span--1"
+                  >The sea explorer</span
+                >
+              </h3>
+
+              <div class="card__details">
+                <ul class="card__list">
+                  <li class="card__item">3 day tours</li>
+                  <li class="card__item">Up to 30 people</li>
+                  <li class="card__item">2 tour guides</li>
+                  <li class="card__item">Sleep in cozy hotels</li>
+                  <li class="card__item">Difficulty: easy</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card__side card__side--back card__side--back--1">
+              <div class="card__back-container">
+                <p class="card__only">Only</p>
+                <p class="card__price">$297</p>
+                <a
+                  href="#popup"
+                  class="btn__rounded btn__rounded--white u-text-uppercase card__popup"
+                  >Book now</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__side card__side--front">
+              <div class="card__image card__image--2"></div>
+              <h3 class="card__title">
+                <span class="card__title-span card__title-span--2"
+                  >The forest hiker</span
+                >
+              </h3>
+
+              <div class="card__details">
+                <ul class="card__list">
+                  <li class="card__item">7 day tours</li>
+                  <li class="card__item">Up to 40 people</li>
+                  <li class="card__item">6 tour guides</li>
+                  <li class="card__item">Sleep in provided tents</li>
+                  <li class="card__item">Difficulty: medium</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card__side card__side--back card__side--back--2">
+              <div class="card__back-container">
+                <p class="card__only">Only</p>
+                <p class="card__price">$297</p>
+                <a
+                  href="#popup"
+                  class="btn__rounded btn__rounded--white u-text-uppercase card__popup"
+                  >Book now</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__side card__side--front">
+              <div class="card__image card__image--3"></div>
+              <h3 class="card__title">
+                <span class="card__title-span card__title-span--3"
+                  >The snow adventurer</span
+                >
+              </h3>
+
+              <div class="card__details">
+                <ul class="card__list">
+                  <li class="card__item">5 day tours</li>
+                  <li class="card__item">Up to 15 people</li>
+                  <li class="card__item">3 tour guides</li>
+                  <li class="card__item">Sleep in provided tents</li>
+                  <li class="card__item">Difficulty: hard</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card__side card__side--back card__side--back--3">
+              <div class="card__back-container">
+                <p class="card__only">Only</p>
+                <p class="card__price">$897</p>
+                <a
+                  href="#popup"
+                  class="btn__rounded btn__rounded--white u-text-uppercase card__popup"
+                  >Book now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials-section">
+        <div class="bg__video-container">
+          <video class="bg__video" autoplay muted loop>
+            <source src="./img/video/video.mp4" type="video/mp4" />
+            <source src="./img/video/video.webm" type="video/webm" />
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+        <div class="header-container u-text-center">
+          <h2 class="header__secondary u-margin-bottom-xl">
+            We make people genuinely happy
+          </h2>
+        </div>
+        <div class="testimonial-container">
+          <div class="testimonial">
+            <figure class="testimonial__image-container">
+              <img
+                src="./img/testimonials/testimonial-mary-smith.jpg"
+                alt="Mary Smith"
+                class="testimonial__photo"
+              />
+              <figcaption class="testimonial__caption">Mary Smith</figcaption>
+            </figure>
+
+            <blockquote class="testimonial__content">
+              <h3 class="header__tertiary">
+                I had the best week ever with my family
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aperiam, ipsum sapiente aspernatur libero repellat quis
+                consequatur ducimus quam nisi exercitationem omnis earum qui.
+                Aperiam, ipsum sapiente aspernatur libero repellat quis
+                consequatur ducimus quam nisi exercitationem omnis earum qui.
+              </p>
+            </blockquote>
+          </div>
+
+          <div class="testimonial">
+            <figure class="testimonial__image-container">
+              <img
+                src="./img/testimonials/testimonial-jack-wilson.jpg"
+                alt="Jack Wilson"
+                class="testimonial__photo"
+              />
+              <figcaption class="testimonial__caption">Jack Wilson</figcaption>
+            </figure>
+
+            <blockquote class="testimonial__content">
+              <h3 class="header__tertiary">
+                Wow! my life is completely different now
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aperiam, ipsum sapiente aspernatur libero repellat quis
+                consequatur ducimus quam nisi exercitationem omnis earum qui.
+                Aperiam, ipsum sapiente aspernatur libero repellat quis
+                consequatur ducimus quam nisi exercitationem omnis earum qui.
+              </p>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="popup" id="popup">
+      <div class="popup__content">
+        <div class="popup__images-container">
+          <img
+            srcset="
+              ./img/popup/popup-img-1.jpg        550w,
+              ./img/popup/popup-img-1-mobile.jpg 350w
+            "
+            sizes="(max-width:56.25em) 45vw, (max-width:37.5em) 45vw, 550px"
+            src="./img/popup/popup-img-1.jpg"
+            alt="
+            young woman paddling on a lake"
+            class="popup__image"
+          />
+          <img
+            srcset="
+              ./img/popup/popup-img-2.jpg        550w,
+              ./img/popup/popup-img-2-mobile.jpg 350w
+            "
+            sizes="(max-width:56.25em) 45vw, (max-width:37.5em) 45vw, 550px"
+            src="./img/popup/popup-img-2.jpg"
+            alt="
+            young man on the top of a mountain"
+            class="popup__image"
+          />
+        </div>
+
+        <div class="popup__text-container">
+          <h2 class="header__secondary u-margin-bottom-small">
+            Start booking now
+          </h2>
+          <h3 class="header__tertiary u-margin-bottom-small">
+            Important – please red these terms before booking
+          </h3>
+          <p class="popup__paragraph u-margin-bottom-medium">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed sed
+            risus pretium quam. Aliquam sem et tortor consequat id. Volutpat
+            odio facilisis mauris sit amet massa vitae. Mi bibendum neque
+            egestas congue. Placerat orci nulla pellentesque dignissim enim sit.
+            Vitae semper quis lectus nulla at volutpat diam ut venenatis.
+            Malesuada pellentesque elit eget gravida cum sociis natoque
+            penatibus et. Proin fermentum leo vel orci porta non pulvinar neque
+            laoreet. Gravida neque convallis a cras semper. Molestie at
+            elementum eu facilisis sed odio morbi quis. Faucibus vitae aliquet
+            nec ullamcorper sit amet risus nullam eget. Nam libero justo laoreet
+            sit. Amet massa vitae tortor condimentum lacinia quis vel eros
+            donec. Sit amet facilisis magna etiam. Imperdiet sed euismod nisi
+            porta.
+          </p>
+          <a href="#" class="btn__rounded btn__rounded--green u-text-uppercase"
+            >Book now!</a
+          >
+          <a href="#section-tours" class="popup__close-btn">&times;</a>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./js/popup.js"></script>
+  </body>
+</html>
