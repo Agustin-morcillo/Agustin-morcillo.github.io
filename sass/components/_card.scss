@@ -56,15 +56,6 @@
           colors.$color-secondary-dark
         ),
         url("../img/tours/tours-the-sea-explorer.jpg");
-
-      @include b.breakpoint-down(medium) {
-        background-image: linear-gradient(
-            to right bottom,
-            colors.$color-secondary-light,
-            colors.$color-secondary-dark
-          ),
-          url("../img/tours/tours-the-sea-explorer-mobile.jpg");
-      }
     }
 
     &--2 {
@@ -74,15 +65,6 @@
           colors.$color-primary-dark
         ),
         url("../img/tours/tours-the-forest-hiker.jpg");
-
-      @include b.breakpoint-down(medium) {
-        background-image: linear-gradient(
-            to right bottom,
-            colors.$color-primary-light,
-            colors.$color-primary-dark
-          ),
-          url("../img/tours/tours-the-forest-hiker-mobile.jpg");
-      }
     }
 
     &--3 {
@@ -92,15 +74,6 @@
           colors.$color-tertiary-dark
         ),
         url("../img/tours/tours-the-snow-adventurer.jpg");
-
-      @include b.breakpoint-down(medium) {
-        background-image: linear-gradient(
-            to right bottom,
-            colors.$color-tertiary-light,
-            colors.$color-tertiary-dark
-          ),
-          url("../img/tours/tours-the-snow-adventurer-mobile.jpg");
-      }
     }
   }
 
