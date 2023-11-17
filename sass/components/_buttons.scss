@@ -1,6 +1,7 @@
 @use "../abs/colors";
 @use "../abs/shadows";
 @use "../base/animations";
+@use "../abs/z-index" as index;
 
 .btn__rounded {
   padding: 1.5rem 4rem;
@@ -18,7 +19,7 @@
     left: 0;
     border-radius: inherit;
     background-color: inherit;
-    z-index: -1;
+    z-index: map-get(index.$z-index-values, "behind-elements");
     transition: all 400ms;
   }
 

@@ -1,6 +1,7 @@
 @use "../abs/colors";
 @use "../abs/fonts";
 @use "../abs/breakpoints" as b;
+@use "../abs/z-index" as index;
 @use "../abs/shadows";
 @use "../abs/spaces";
 @use "../layout/structure";
@@ -13,7 +14,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3000;
+  z-index: map-get(index.$z-index-values, "highest-covering-layer");
 
   visibility: hidden;
   opacity: 0;
@@ -35,8 +36,6 @@
     opacity: 0;
     transform: scale(0.5);
     transition: all 500ms 200ms;
-
-    z-index: 3500;
 
     @include b.breakpoint-down(medium) {
       width: 90%;

@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: map-get(index.$z-index, "3000");
+    z-index: map-get(index.$z-index-values, "navbar-button-display");
 
     @include b.breakpoint-down(medium) {
       top: 3rem;
@@ -90,7 +90,7 @@
       colors.$color-primary-dark
     );
     transition: all 400ms;
-    z-index: map-get(index.$z-index, "2000");
+    z-index: map-get(index.$z-index-values, "navbar-background");
 
     @include b.breakpoint-down(medium) {
       top: 3rem;
@@ -113,7 +113,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: map-get(index.$z-index, "2500");
+    z-index: map-get(index.$z-index-values, "navbar-options");
   }
 
   &__checkbox:checked ~ &__nav {

@@ -472,7 +472,6 @@ section {
   border-radius: 2px;
   outline-offset: 2rem;
   position: absolute;
-  z-index: 10;
   transition: all 200ms;
 }
 @media (max-width: 56.25em) {
@@ -485,7 +484,7 @@ section {
   outline: 1.5rem solid #55c57a;
   transform: scale(1.05) translateY(-0.5rem);
   box-shadow: 0 2.5rem 40rem rgba(0, 0, 0, 0.5);
-  z-index: 20;
+  z-index: 1000;
 }
 .composition__image:not(:hover) {
   transform: scale(0.95);
@@ -508,7 +507,6 @@ section {
   .composition__image--2 {
     top: -1rem;
     transform: scale(1.3);
-    z-index: 100;
   }
 }
 .composition__image--3 {
@@ -838,7 +836,6 @@ section {
   text-align: center;
   opacity: 0;
   transition: all 500ms;
-  z-index: 10;
 }
 .testimonial:hover .testimonial__caption {
   transform: translate(-50%, -50%);
@@ -878,7 +875,7 @@ section {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3000;
+  z-index: 3500;
   visibility: hidden;
   opacity: 0;
   transition: all 900ms;
@@ -897,7 +894,6 @@ section {
   opacity: 0;
   transform: scale(0.5);
   transition: all 500ms 200ms;
-  z-index: 3500;
 }
 @media (max-width: 56.25em) {
   .popup__content {

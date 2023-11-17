@@ -1,10 +1,12 @@
+@use "../abs/z-index" as index;
+
 .bg__video-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: map-get(index.$z-index-values, "behind-elements");
   opacity: 0.15;
 }
 
