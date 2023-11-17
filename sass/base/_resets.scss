@@ -23,6 +23,7 @@ a:link {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 
   @include b.breakpoint-up(xlarge) {
     font-size: 75%;
