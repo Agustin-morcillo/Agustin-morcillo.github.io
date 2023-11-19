@@ -1,0 +1,153 @@
+@use "../abs/colors";
+@use "../abs/fonts";
+@use "../abs/breakpoints" as b;
+@use "../abs/shadows";
+@use "../abs/spaces";
+@use "../layout/structure";
+
+.form-container {
+  @include structure.grid;
+  margin-inline: auto;
+
+  background-image: linear-gradient(
+      105deg,
+      rgba(colors.$color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url("../img/form/form-bg.jpeg");
+  background-size: cover;
+  border-radius: 0.3rem;
+  box-shadow: map-get(shadows.$shadows, "intense");
+
+  @include b.breakpoint-down(large) {
+    background-image: linear-gradient(
+        105deg,
+        rgba(colors.$color-white, 0.9) 60%,
+        transparent 60%
+      ),
+      url("../img/form/form-bg-laptop.jpeg");
+  }
+
+  @include b.breakpoint-down(medium) {
+    background-image: linear-gradient(
+        rgba(colors.$color-white, 0.9),
+        rgba(colors.$color-white, 0.9)
+      ),
+      url("../img/form/form-bg-mobile.jpeg");
+  }
+}
+
+.form {
+  padding: 6rem;
+  display: block;
+
+  @include b.breakpoint-down(large) {
+    width: 60%;
+  }
+
+  @include b.breakpoint-down(medium) {
+    width: 100%;
+  }
+
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: map-get(fonts.$font-size, "small");
+    font-family: inherit;
+    color: inherit;
+    background-color: rgba(colors.$color-white, 0.5);
+    display: block;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    border: none;
+    border-bottom: 3px solid transparent;
+    border-radius: 2px;
+    transition: all 300ms;
+
+    &:focus {
+      outline: none;
+      border-bottom: 0.3rem solid colors.$color-primary;
+      box-shadow: map-get(shadows.$shadows, "default");
+    }
+
+    &::placeholder {
+      color: colors.$color-grey-dark-2;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid colors.$color-secondary-dark;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: map-get(fonts.$font-weight, "bold");
+    display: block;
+    padding: 1rem 0 0 2rem;
+    transition: all 400ms;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__radio-group {
+    display: inline-block;
+    &:not(:first-child) {
+      margin-left: 1.5rem;
+    }
+
+    @include b.breakpoint-down(medium) {
+      display: block;
+
+      &:not(:first-child) {
+        margin-left: 0;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    cursor: pointer;
+    position: relative;
+    padding-left: 4rem;
+  }
+
+  &__radio-btn {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid colors.$color-primary;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.4rem;
+    left: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: inherit;
+      background-color: colors.$color-primary;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all 200ms;
+    }
+  }
+
+  &__radio-input:checked + &__radio-label &__radio-btn::after {
+    opacity: 1;
+  }
+}
