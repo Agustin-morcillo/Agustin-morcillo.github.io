@@ -1130,7 +1130,6 @@ section {
 @media (max-width: 56.25em) {
   .popup__content {
     width: 90%;
-    max-height: 70rem;
     overflow-x: scroll;
     flex-direction: column;
     min-width: auto;
