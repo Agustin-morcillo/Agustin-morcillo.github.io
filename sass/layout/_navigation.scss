@@ -1,8 +1,8 @@
-@use "../abs/colors";
-@use "../abs/fonts";
-@use "../abs/breakpoints" as b;
-@use "../abs/z-index" as index;
-@use "../abs/shadows";
+@use "../abs/colors" as *;
+@use "../abs/fonts" as *;
+@use "../abs/shadows" as *;
+@use "../abs/breakpoints" as *;
+@use "../abs/z-index" as *;
 
 .navigation {
   &__checkbox {
@@ -16,14 +16,14 @@
     position: fixed;
     top: 6rem;
     right: 6rem;
-    background-color: colors.$color-white;
-    box-shadow: map-get(shadows.$shadows, "default");
+    background-color: $color-white;
+    box-shadow: map-get($shadows, "default");
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: map-get(index.$z-index-values, "navbar-button-display");
+    z-index: map-get($z-index-values, "navbar-button-display");
 
-    @include b.breakpoint-down(medium) {
+    @include breakpoint-down(medium) {
       top: 3rem;
     }
   }
@@ -32,7 +32,7 @@
     display: block;
     width: 3.5rem;
     height: 0.2rem;
-    background-color: colors.$color-grey-dark;
+    background-color: $color-grey-dark;
     position: relative;
 
     &::before,
@@ -46,12 +46,12 @@
     }
 
     &::before {
-      background-color: colors.$color-grey-dark;
+      background-color: $color-grey-dark;
       top: -1rem;
     }
 
     &::after {
-      background-color: colors.$color-grey-dark;
+      background-color: $color-grey-dark;
       top: 1rem;
     }
   }
@@ -85,14 +85,11 @@
     position: fixed;
     top: 6.5rem;
     right: 6.5rem;
-    background: radial-gradient(
-      colors.$color-primary-light,
-      colors.$color-primary-dark
-    );
+    background: radial-gradient($color-primary-light, $color-primary-dark);
     transition: all 400ms;
-    z-index: map-get(index.$z-index-values, "navbar-background");
+    z-index: map-get($z-index-values, "navbar-background");
 
-    @include b.breakpoint-down(medium) {
+    @include breakpoint-down(medium) {
       top: 3rem;
     }
   }
@@ -113,7 +110,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: map-get(index.$z-index-values, "navbar-options");
+    z-index: map-get($z-index-values, "navbar-options");
   }
 
   &__checkbox:checked ~ &__nav {
@@ -141,17 +138,17 @@
     &:link,
     &:visited {
       display: block;
-      color: colors.$color-white;
+      color: $color-white;
       text-decoration: none;
-      font-size: map-get(fonts.$font-size, "large");
-      font-weight: map-get(fonts.$font-weight, "thin");
+      font-size: map-get($font-size, "large");
+      font-weight: map-get($font-weight, "thin");
       text-transform: uppercase;
       padding: 2rem 2rem;
       background: linear-gradient(
         120deg,
         transparent 0,
         transparent 50%,
-        colors.$color-white 50%
+        $color-white 50%
       );
       background-size: 220%;
       transition: all 400ms;
@@ -162,9 +159,9 @@
     }
 
     &:hover {
-      background: linear-gradient(120deg, colors.$color-white 50%);
+      background: linear-gradient(120deg, $color-white 50%);
       background-position: 100%;
-      color: colors.$color-primary;
+      color: $color-primary;
       transform: translateX(1rem);
     }
   }

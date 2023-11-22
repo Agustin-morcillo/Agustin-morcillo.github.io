@@ -1,12 +1,12 @@
-@use "../abs/colors";
-@use "../abs/breakpoints" as b;
-@use "../abs/spaces";
+@use "../abs/colors" as *;
+@use "../abs/spaces" as *;
+@use "../abs/breakpoints" as *;
 
 body {
-  padding: map-get(spaces.$spaces, "medium");
-  background-color: colors.$color-grey-light-1;
+  padding: map-get($spaces, "medium");
+  background-color: $color-grey-light-1;
 
-  @include b.breakpoint-down(medium) {
+  @include breakpoint-down(medium) {
     padding: 0rem;
   }
 }
@@ -14,21 +14,21 @@ body {
 @mixin grid {
   display: flex;
   max-width: 114rem;
-  gap: map-get(spaces.$spaces, "large");
+  gap: map-get($spaces, "large");
 
-  @include b.breakpoint-down(medium) {
+  @include breakpoint-down(medium) {
     max-width: 50rem;
     width: 100%;
     flex-direction: column;
     align-items: center;
   }
 
-  @include b.breakpoint-down(small) {
+  @include breakpoint-down(small) {
     width: 90%;
   }
 }
 
 section {
-  padding-top: map-get(spaces.$spaces, "x-large");
-  padding-bottom: map-get(spaces.$spaces, "x-large");
+  padding-top: map-get($spaces, "x-large");
+  padding-bottom: map-get($spaces, "x-large");
 }

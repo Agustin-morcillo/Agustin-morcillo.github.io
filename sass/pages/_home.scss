@@ -1,6 +1,5 @@
 @use "../base";
 @use "../utils/utils";
-@use "../abs/colors";
 @use "../layout/structure";
 @use "../layout/navigation";
 @use "../layout/header";
@@ -14,17 +13,3 @@
 @use "../components/bg-video";
 @use "../layout/footer";
 @use "../components/popup";
-
-.benefits-section {
-  background: linear-gradient(
-      to right,
-      rgba(colors.$color-primary, 0.6),
-      rgba(colors.$color-primary-dark, 0.6)
-    ),
-    url("../img/benefits/benefits-bg.jpg") top/ cover;
-  transform: skewY(-7deg);
-
-  > * {
-    transform: skewY(7deg);
-  }
-}

@@ -1,6 +1,5 @@
-@use "../abs/colors";
-@use "../abs/shadows";
-@use "../layout/structure";
+@use "../abs/colors" as *;
+@use "../abs/shadows" as *;
 
 .header {
   &-container {
@@ -12,11 +11,7 @@
   &__secondary {
     display: inline-block;
     text-transform: uppercase;
-    background: linear-gradient(
-      to right,
-      colors.$color-primary,
-      colors.$color-primary-dark
-    );
+    background: linear-gradient(to right, $color-primary, $color-primary-dark);
     color: transparent;
     text-wrap: balance;
     background-clip: text;
@@ -24,7 +19,7 @@
 
     &:hover {
       transform: skewY(2deg) skewX(15deg) scale(1.1);
-      box-shadow: map-get(shadows.$shadows, "ligth");
+      box-shadow: map-get($shadows, "ligth");
     }
   }
 

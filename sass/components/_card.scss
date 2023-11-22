@@ -1,12 +1,11 @@
-@use "../abs/colors";
-@use "../abs/shadows";
-@use "../abs/fonts";
-@use "../abs/spaces";
-@use "../abs/breakpoints" as b;
-@use "../layout/structure";
+@use "../abs/colors" as *;
+@use "../abs/fonts" as *;
+@use "../abs/shadows" as *;
+@use "../abs/breakpoints" as *;
+@use "../layout/structure" as *;
 
 .card-container {
-  @include structure.grid;
+  @include grid;
 }
 
 .card {
@@ -22,7 +21,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: map-get(shadows.$shadows, "subtle");
+    box-shadow: map-get($shadows, "subtle");
     border-radius: 3px;
     overflow: hidden;
     backface-visibility: hidden;
@@ -52,8 +51,8 @@
     &--1 {
       background-image: linear-gradient(
           to right bottom,
-          colors.$color-secondary-light,
-          colors.$color-secondary-dark
+          $color-secondary-light,
+          $color-secondary-dark
         ),
         url("../img/tours/tours-the-sea-explorer.jpg");
     }
@@ -61,8 +60,8 @@
     &--2 {
       background-image: linear-gradient(
           to right bottom,
-          colors.$color-primary-light,
-          colors.$color-primary-dark
+          $color-primary-light,
+          $color-primary-dark
         ),
         url("../img/tours/tours-the-forest-hiker.jpg");
     }
@@ -70,18 +69,18 @@
     &--3 {
       background-image: linear-gradient(
           to right bottom,
-          colors.$color-tertiary-light,
-          colors.$color-tertiary-dark
+          $color-tertiary-light,
+          $color-tertiary-dark
         ),
         url("../img/tours/tours-the-snow-adventurer.jpg");
     }
   }
 
   &__title {
-    font-size: map-get(fonts.$font-size, "medium");
-    font-weight: map-get(fonts.$font-weight, "thin");
+    font-size: map-get($font-size, "medium");
+    font-weight: map-get($font-weight, "thin");
     text-transform: uppercase;
-    color: colors.$color-white;
+    color: $color-white;
     text-align: right;
     width: 75%;
     position: absolute;
@@ -95,24 +94,24 @@
       &--1 {
         background-image: linear-gradient(
           to right bottom,
-          rgba(colors.$color-secondary-light, 0.85),
-          rgba(colors.$color-secondary-dark, 0.85)
+          rgba($color-secondary-light, 0.85),
+          rgba($color-secondary-dark, 0.85)
         );
       }
 
       &--2 {
         background-image: linear-gradient(
           to right bottom,
-          rgba(colors.$color-primary-light, 0.85),
-          rgba(colors.$color-primary-dark, 0.85)
+          rgba($color-primary-light, 0.85),
+          rgba($color-primary-dark, 0.85)
         );
       }
 
       &--3 {
         background-image: linear-gradient(
           to right bottom,
-          rgba(colors.$color-tertiary-light, 0.85),
-          rgba(colors.$color-tertiary-dark, 0.85)
+          rgba($color-tertiary-light, 0.85),
+          rgba($color-tertiary-dark, 0.85)
         );
       }
     }
@@ -133,14 +132,14 @@
     text-align: center;
 
     &:not(:last-child) {
-      border-bottom: 1px solid colors.$color-grey-light-2;
+      border-bottom: 1px solid $color-grey-light-2;
     }
   }
 
   //Back Styling
   &__back-container {
     height: 100%;
-    color: colors.$color-white;
+    color: $color-white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -151,42 +150,42 @@
     &--1 {
       background-image: linear-gradient(
         to right bottom,
-        rgba(colors.$color-secondary-light, 0.85),
-        rgba(colors.$color-secondary-dark, 0.85)
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
       );
     }
 
     &--2 {
       background-image: linear-gradient(
         to right bottom,
-        rgba(colors.$color-primary-light, 0.85),
-        rgba(colors.$color-primary-dark, 0.85)
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
       );
     }
 
     &--3 {
       background-image: linear-gradient(
         to right bottom,
-        rgba(colors.$color-tertiary-light, 0.85),
-        rgba(colors.$color-tertiary-dark, 0.85)
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
       );
     }
   }
 
   &__only {
-    font-size: map-get(fonts.$font-size, "small");
+    font-size: map-get($font-size, "small");
     text-transform: uppercase;
   }
 
   &__price {
-    font-size: map-get(fonts.$font-size, "x-large");
-    font-weight: map-get(fonts.$font-weight, "hairline");
+    font-size: map-get($font-size, "x-large");
+    font-weight: map-get($font-weight, "hairline");
     margin-bottom: 3rem;
   }
 
-  @include b.breakpoint-down(medium) {
+  @include breakpoint-down(medium) {
     width: 100%;
-    background-color: colors.$color-white;
+    background-color: $color-white;
 
     &__side {
       position: static;

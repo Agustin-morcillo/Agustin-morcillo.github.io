@@ -1,37 +1,36 @@
-@use "../abs/colors";
-@use "../abs/fonts";
-@use "../abs/breakpoints" as b;
-@use "../abs/shadows";
-@use "../abs/spaces";
-@use "../layout/structure";
+@use "../abs/colors" as *;
+@use "../abs/fonts" as *;
+@use "../abs/shadows" as *;
+@use "../abs/breakpoints" as *;
+@use "../layout/structure" as *;
 
 .form-container {
-  @include structure.grid;
+  @include grid;
   margin-inline: auto;
 
   background-image: linear-gradient(
       105deg,
-      rgba(colors.$color-white, 0.9) 50%,
+      rgba($color-white, 0.9) 50%,
       transparent 50%
     ),
     url("../img/form/form-bg.jpeg");
   background-size: cover;
   border-radius: 0.3rem;
-  box-shadow: map-get(shadows.$shadows, "intense");
+  box-shadow: map-get($shadows, "intense");
 
-  @include b.breakpoint-down(large) {
+  @include breakpoint-down(large) {
     background-image: linear-gradient(
         105deg,
-        rgba(colors.$color-white, 0.9) 60%,
+        rgba($color-white, 0.9) 60%,
         transparent 60%
       ),
       url("../img/form/form-bg-laptop.jpeg");
   }
 
-  @include b.breakpoint-down(medium) {
+  @include breakpoint-down(medium) {
     background-image: linear-gradient(
-        rgba(colors.$color-white, 0.9),
-        rgba(colors.$color-white, 0.9)
+        rgba($color-white, 0.9),
+        rgba($color-white, 0.9)
       ),
       url("../img/form/form-bg-mobile.jpeg");
   }
@@ -41,11 +40,11 @@
   padding: 6rem;
   display: block;
 
-  @include b.breakpoint-down(large) {
+  @include breakpoint-down(large) {
     width: 60%;
   }
 
-  @include b.breakpoint-down(medium) {
+  @include breakpoint-down(medium) {
     width: 100%;
   }
 
@@ -54,10 +53,10 @@
   }
 
   &__input {
-    font-size: map-get(fonts.$font-size, "small");
+    font-size: map-get($font-size, "small");
     font-family: inherit;
     color: inherit;
-    background-color: rgba(colors.$color-white, 0.5);
+    background-color: rgba($color-white, 0.5);
     display: block;
     width: 100%;
     padding: 1.5rem 2rem;
@@ -68,22 +67,22 @@
 
     &:focus {
       outline: none;
-      border-bottom: 0.3rem solid colors.$color-primary;
-      box-shadow: map-get(shadows.$shadows, "default");
+      border-bottom: 0.3rem solid $color-primary;
+      box-shadow: map-get($shadows, "default");
     }
 
     &::placeholder {
-      color: colors.$color-grey-dark-2;
+      color: $color-grey-dark-2;
     }
 
     &:focus:invalid {
-      border-bottom: 3px solid colors.$color-secondary-dark;
+      border-bottom: 3px solid $color-secondary-dark;
     }
   }
 
   &__label {
     font-size: 1.2rem;
-    font-weight: map-get(fonts.$font-weight, "bold");
+    font-weight: map-get($font-weight, "bold");
     display: block;
     padding: 1rem 0 0 2rem;
     transition: all 400ms;
@@ -101,7 +100,7 @@
       margin-left: 1.5rem;
     }
 
-    @include b.breakpoint-down(medium) {
+    @include breakpoint-down(medium) {
       display: block;
 
       &:not(:first-child) {
@@ -125,7 +124,7 @@
     display: inline-block;
     height: 3rem;
     width: 3rem;
-    border: 5px solid colors.$color-primary;
+    border: 5px solid $color-primary;
     border-radius: 50%;
     position: absolute;
     top: -0.4rem;
@@ -137,7 +136,7 @@
       width: 1.3rem;
       height: 1.3rem;
       border-radius: inherit;
-      background-color: colors.$color-primary;
+      background-color: $color-primary;
       position: absolute;
       top: 50%;
       left: 50%;

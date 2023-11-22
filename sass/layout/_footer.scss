@@ -1,15 +1,15 @@
-@use "../abs/colors";
-@use "../abs/breakpoints" as b;
+@use "../abs/colors" as *;
+@use "../abs/fonts" as *;
+@use "../abs/spaces" as *;
+@use "../abs/breakpoints" as *;
 @use "./structure";
-@use "../abs/fonts";
-@use "../abs/spaces";
 
 .footer {
-  font-size: map-get(fonts.$font-size, "tiny");
-  background-color: colors.$color-grey-dark-3;
-  color: colors.$color-grey-light-1;
-  padding-top: map-get(spaces.$spaces, "x-large");
-  padding-bottom: map-get(spaces.$spaces, "x-large");
+  font-size: map-get($font-size, "tiny");
+  background-color: $color-grey-dark-3;
+  color: $color-grey-light-1;
+  padding-top: map-get($spaces, "x-large");
+  padding-bottom: map-get($spaces, "x-large");
 
   &__logo-container {
     text-align: center;
@@ -26,7 +26,7 @@
     margin-inline: auto;
     margin-top: 8rem;
 
-    @include b.breakpoint-down(medium) {
+    @include breakpoint-down(medium) {
       margin-top: 5rem;
     }
   }
@@ -34,7 +34,7 @@
   &__navigation {
     width: 50%;
 
-    @include b.breakpoint-down(large) {
+    @include breakpoint-down(large) {
       width: 100%;
       text-align: center;
     }
@@ -42,7 +42,7 @@
 
   &__list {
     list-style: none;
-    border-top: 1px solid colors.$color-grey-dark;
+    border-top: 1px solid $color-grey-dark;
     padding-top: 2rem;
     display: inline-block;
   }
@@ -58,8 +58,8 @@
   &__link {
     &:link,
     &:visited {
-      color: colors.$color-grey-light-1;
-      background-color: colors.$color-grey-dark-3;
+      color: $color-grey-light-1;
+      background-color: $color-grey-dark-3;
       display: inline-block;
       text-transform: uppercase;
       transition: all 200ms;
@@ -67,8 +67,8 @@
 
     &:hover,
     &:active {
-      color: colors.$color-primary;
-      box-shadow: 0 1rem 2rem rgba(colors.$color-black, 0.4);
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
       transform: rotate(5deg) scale(1.3);
     }
 
@@ -79,18 +79,18 @@
 
   &__copyright {
     width: 38%;
-    border-top: 1px solid colors.$color-grey-dark;
+    border-top: 1px solid $color-grey-dark;
     padding-top: 2rem;
     display: inline-block;
 
-    @include b.breakpoint-down(large) {
+    @include breakpoint-down(large) {
       width: 100%;
     }
 
     &-text {
       width: 90%;
 
-      @include b.breakpoint-down(medium) {
+      @include breakpoint-down(medium) {
         width: 100%;
       }
     }

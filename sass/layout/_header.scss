@@ -1,34 +1,34 @@
-@use "../abs/colors";
-@use "../abs/fonts";
-@use "../abs/breakpoints" as b;
+@use "../abs/colors" as *;
+@use "../abs/fonts" as *;
+@use "../abs/breakpoints" as *;
 @use "../base/animations";
 
 .header {
   min-height: 95vh;
   background: linear-gradient(
-      rgba(colors.$color-primary, 0.4),
-      rgba(colors.$color-primary-dark, 0.4)
+      rgba($color-primary, 0.4),
+      rgba($color-primary-dark, 0.4)
     ),
     url("../img/header/hero-image.jpg") top / cover;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
-  @include b.breakpoint-up(xlarge) {
+  @include breakpoint-up(xlarge) {
     background: linear-gradient(
-        rgba(colors.$color-primary, 0.4),
-        rgba(colors.$color-primary-dark, 0.4)
+        rgba($color-primary, 0.4),
+        rgba($color-primary-dark, 0.4)
       ),
       url("../img/header/hero-image-large.jpg") top / cover;
   }
 
-  @include b.breakpoint-down(medium) {
+  @include breakpoint-down(medium) {
     background: linear-gradient(
-        rgba(colors.$color-primary, 0.4),
-        rgba(colors.$color-primary-dark, 0.4)
+        rgba($color-primary, 0.4),
+        rgba($color-primary-dark, 0.4)
       ),
       url("../img/header/hero-image-small.jpg") top / cover;
   }
 
-  @include b.breakpoint-down(small) {
+  @include breakpoint-down(small) {
     min-height: 100vh;
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   }
@@ -50,7 +50,7 @@
 
   &__content {
     text-align: center;
-    color: colors.$color-white;
+    color: $color-white;
     text-transform: uppercase;
     position: relative;
     bottom: 8.6rem;
@@ -66,7 +66,7 @@
     margin-right: -3.5rem;
     animation: toRightLeft 1s;
 
-    @include b.breakpoint-down(small) {
+    @include breakpoint-down(small) {
       letter-spacing: 0.5rem;
       margin-right: -0.5rem;
     }
@@ -74,12 +74,12 @@
 
   &__primary--sub {
     font-size: 2rem;
-    font-weight: map-get(fonts.$font-weight, "bold");
+    font-weight: map-get($font-weight, "bold");
     letter-spacing: 1.5rem;
     margin-right: -1.5em;
     animation: toLeftRight 1s;
 
-    @include b.breakpoint-down(small) {
+    @include breakpoint-down(small) {
       letter-spacing: normal;
       margin-right: 0;
     }

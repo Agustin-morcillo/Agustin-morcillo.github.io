@@ -524,6 +524,14 @@ section {
   }
 }
 
+.benefits-section {
+  background: linear-gradient(to right, rgba(85, 197, 122, 0.6), rgba(40, 180, 133, 0.6)), url("../img/benefits/benefits-bg.jpg") top/cover;
+  transform: skewY(-7deg);
+}
+.benefits-section > * {
+  transform: skewY(7deg);
+}
+
 .box-container {
   display: flex;
   max-width: 114rem;
@@ -1215,12 +1223,4 @@ section {
 .content-visible {
   opacity: 1 !important;
   transform: scale(1) !important;
-}
-
-.benefits-section {
-  background: linear-gradient(to right, rgba(85, 197, 122, 0.6), rgba(40, 180, 133, 0.6)), url("../img/benefits/benefits-bg.jpg") top/cover;
-  transform: skewY(-7deg);
-}
-.benefits-section > * {
-  transform: skewY(7deg);
 }/*# sourceMappingURL=main.css.map */
