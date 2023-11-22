@@ -36,7 +36,8 @@
 
     @include breakpoint-down(medium) {
       width: 90%;
-      overflow-x: scroll;
+      max-height: calc(100vh - 2rem);
+      overflow-y: auto;
       flex-direction: column;
       min-width: auto;
     }
