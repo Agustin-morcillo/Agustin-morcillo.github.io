@@ -6,6 +6,7 @@
 
 .card-container {
   @include grid;
+  margin-inline: auto;
 }
 
 .card {

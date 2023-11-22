@@ -29,6 +29,5 @@ body {
 }
 
 section {
-  padding-top: map-get($spaces, "x-large");
-  padding-bottom: map-get($spaces, "x-large");
+  padding-block: map-get($spaces, "x-large");
 }

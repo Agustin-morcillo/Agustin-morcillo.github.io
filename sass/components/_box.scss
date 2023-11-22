@@ -21,6 +21,7 @@
 
 .box-container {
   @include grid;
+  margin-inline: auto;
   justify-content: center;
   margin-top: map-get($spaces, "x-large");
   margin-bottom: map-get($spaces, "x-large");

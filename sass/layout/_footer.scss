@@ -8,8 +8,7 @@
   font-size: map-get($font-size, "tiny");
   background-color: $color-grey-dark-3;
   color: $color-grey-light-1;
-  padding-top: map-get($spaces, "x-large");
-  padding-bottom: map-get($spaces, "x-large");
+  padding-block: map-get($spaces, "x-large");
 
   &__logo-container {
     text-align: center;
