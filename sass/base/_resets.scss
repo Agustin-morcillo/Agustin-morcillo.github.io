@@ -8,19 +8,6 @@
   box-sizing: border-box;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-}
-
-a,
-a:active,
-a:visited,
-a:link {
-  display: inline-block;
-  text-decoration: none;
-}
-
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -36,4 +23,28 @@ html {
   @include breakpoint-down(small) {
     font-size: 50%;
   }
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  display: block;
+}
+
+a,
+a:active,
+a:visited,
+a:link {
+  display: inline-block;
+  text-decoration: none;
 }

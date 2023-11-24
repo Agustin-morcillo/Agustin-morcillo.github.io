@@ -54,10 +54,8 @@
 
   &__input {
     font-size: map-get($font-size, "small");
-    font-family: inherit;
     color: inherit;
     background-color: rgba($color-white, 0.5);
-    display: block;
     width: 100%;
     padding: 1.5rem 2rem;
     border: none;
