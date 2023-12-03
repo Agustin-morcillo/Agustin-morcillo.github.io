@@ -19,6 +19,7 @@ h1 {
 h2 {
   font-size: map-get($font-size, "large");
   font-weight: map-get($font-weight, "bold");
+  margin-bottom: map-get($spaces, "x-large");
 }
 
 h3 {
