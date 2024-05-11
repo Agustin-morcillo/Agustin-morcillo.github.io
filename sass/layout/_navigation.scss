@@ -17,8 +17,6 @@
     position: fixed;
     top: pxToRem(60px);
     right: pxToRem(60px);
-    top: 60px;
-    right: 60px;
     background-color: $color-white;
     box-shadow: map-get($shadows, "default");
     display: flex;
@@ -27,14 +25,10 @@
     z-index: map-get($z-index-values, "navbar-button-display");
 
     @include breakpoint-down(medium) {
-      top: pxToRem(30px);
-    }
-
-    @include breakpoint-down(small) {
-      top: pxToRem(24px);
-      right: pxToRem(48px);
       min-height: pxToRem(56px);
       width: pxToRem(56px);
+      top: pxToRem(24px);
+      right: pxToRem(48px);
     }
   }
 
@@ -45,7 +39,7 @@
     background-color: $color-grey-dark;
     position: relative;
 
-    @include breakpoint-down(small) {
+    @include breakpoint-down(medium) {
       width: pxToRem(28px);
       height: pxToRem(1.6px);
     }
@@ -64,7 +58,7 @@
       background-color: $color-grey-dark;
       top: pxToRem(-10px);
 
-      @include breakpoint-down(small) {
+      @include breakpoint-down(medium) {
         top: pxToRem(-8.8px);
       }
     }
@@ -109,13 +103,10 @@
     z-index: map-get($z-index-values, "navbar-background");
 
     @include breakpoint-down(medium) {
-      top: pxToRem(30px);
-      right: pxToRem(50px);
-    }
-
-    @include breakpoint-down(small) {
       height: pxToRem(40px);
       width: pxToRem(40px);
+      top: pxToRem(35px);
+      right: pxToRem(60px);
     }
   }
 
