@@ -110,6 +110,7 @@
 
     @include breakpoint-down(medium) {
       top: pxToRem(30px);
+      right: pxToRem(50px);
     }
 
     @include breakpoint-down(small) {
