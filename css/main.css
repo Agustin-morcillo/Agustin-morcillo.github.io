@@ -7,6 +7,7 @@
 }
 
 html {
+  font-size: 100%;
   scroll-behavior: smooth;
 }
 
@@ -24,6 +25,12 @@ textarea,
 select {
   font: inherit;
   display: block;
+}
+
+input,
+textarea {
+  letter-spacing: inherit;
+  word-spacing: inherit;
 }
 
 a,
