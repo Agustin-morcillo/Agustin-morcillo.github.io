@@ -9,20 +9,7 @@
 }
 
 html {
-  font-size: 62.5%;
   scroll-behavior: smooth;
-
-  @include breakpoint-up(xlarge) {
-    font-size: 75%;
-  }
-
-  @include breakpoint-down(medium) {
-    font-size: 56.25%;
-  }
-
-  @include breakpoint-down(small) {
-    font-size: 50%;
-  }
 }
 
 img,

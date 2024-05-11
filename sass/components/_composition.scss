@@ -1,5 +1,6 @@
 @use "../abs/colors" as *;
 @use "../abs/spaces" as *;
+@use "../abs/functions" as *;
 @use "../abs/shadows" as *;
 @use "../abs/breakpoints" as *;
 @use "../abs/z-index" as *;
@@ -40,7 +41,7 @@
     width: 55%;
     box-shadow: map-get($shadows, "default");
     border-radius: 2px;
-    outline-offset: 2rem;
+    outline-offset: pxToRem(20px);
     position: absolute;
     transition: all 200ms;
 
@@ -51,8 +52,8 @@
 
     &:hover {
       outline: 1.5rem solid $color-primary;
-      transform: scale(1.05) translateY(-0.5rem);
-      box-shadow: 0 2.5rem 40rem rgba($color-black, 0.5);
+      transform: scale(1.05) translateY(pxToRem(-5px));
+      box-shadow: 0 pxToRem(25px) pxToRem(400px) rgba($color-black, 0.5);
       z-index: map-get($z-index-values, "animation-elements");
     }
 
@@ -63,7 +64,7 @@
     //Specific Images
     &--1 {
       left: 0;
-      top: -2rem;
+      top: pxToRem(-20px);
 
       @include breakpoint-down(medium) {
         top: 0;
@@ -73,17 +74,17 @@
 
     &--2 {
       right: 0;
-      top: 2rem;
+      top: pxToRem(20px);
 
       @include breakpoint-down(medium) {
-        top: -1rem;
+        top: pxToRem(-10px);
         transform: scale(1.3);
       }
     }
 
     &--3 {
       left: 20%;
-      top: 10rem;
+      top: pxToRem(100px);
 
       @include breakpoint-down(medium) {
         top: 0;

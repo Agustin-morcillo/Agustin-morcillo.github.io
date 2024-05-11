@@ -1,17 +1,23 @@
 @use "../abs/colors" as *;
 @use "../abs/fonts" as *;
+@use "../abs/functions" as *;
 @use "../abs/shadows" as *;
 @use "../abs/z-index" as *;
+@use "../abs/breakpoints" as *;
 @use "../base/animations" as *;
 
 .btn__rounded {
-  font-size: map-get($font-size, "default");
   text-transform: uppercase;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
+  padding: pxToRem(15px) pxToRem(40px);
+  border-radius: pxToRem(100px);
   transition: all 300ms;
   position: relative;
   border: none;
+  display: block;
+
+  @include breakpoint-down(small) {
+    padding: pxToRem(15px) pxToRem(34px);
+  }
 
   &::after {
     content: "";
@@ -57,7 +63,7 @@
 }
 
 .btn__text {
-  padding: 0.5rem;
+  padding: pxToRem(5px);
   transition: all 200ms;
   border-bottom: 1px solid $color-grey-dark;
   color: $color-grey-dark;

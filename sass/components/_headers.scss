@@ -1,5 +1,8 @@
 @use "../abs/colors" as *;
+@use "../abs/fonts" as *;
 @use "../abs/shadows" as *;
+@use "../abs/functions" as *;
+@use "../abs/breakpoints" as *;
 
 .header {
   &-container {

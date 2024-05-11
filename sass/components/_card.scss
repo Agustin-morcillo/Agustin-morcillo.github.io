@@ -1,5 +1,6 @@
 @use "../abs/colors" as *;
 @use "../abs/fonts" as *;
+@use "../abs/functions" as *;
 @use "../abs/shadows" as *;
 @use "../abs/breakpoints" as *;
 @use "../layout/structure" as *;
@@ -10,7 +11,7 @@
 }
 
 .card {
-  min-height: 54rem;
+  min-height: pxToRem(540px);
   width: 33.33%;
   perspective: 1500px;
   position: relative;
@@ -43,7 +44,7 @@
 
   //Front Styling
   &__image {
-    min-height: 23rem;
+    min-height: pxToRem(230px);
     background-size: cover;
     background-blend-mode: screen;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -85,11 +86,11 @@
     text-align: right;
     width: 75%;
     position: absolute;
-    top: 12rem;
-    right: 2rem;
+    top: pxToRem(120px);
+    right: pxToRem(20px);
 
     &-span {
-      padding: 1rem 1.5rem;
+      padding: pxToRem(10px) pxToRem(15px);
       box-decoration-break: clone;
 
       &--1 {
@@ -119,7 +120,7 @@
   }
 
   &__details {
-    padding: 3rem;
+    padding: pxToRem(30px);
   }
 
   &__list {
@@ -129,7 +130,7 @@
   }
 
   &__item {
-    padding: 1rem;
+    padding: pxToRem(10px);
     text-align: center;
 
     &:not(:last-child) {
@@ -174,14 +175,14 @@
   }
 
   &__only {
-    font-size: map-get($font-size, "small");
+    font-size: map-get($font-size, "tiny");
     text-transform: uppercase;
   }
 
   &__price {
     font-size: map-get($font-size, "x-large");
     font-weight: map-get($font-weight, "hairline");
-    margin-bottom: 3rem;
+    margin-bottom: pxToRem(30px);
   }
 
   @include breakpoint-down(medium) {
@@ -203,7 +204,7 @@
     }
 
     &__back-container {
-      margin: 7rem;
+      margin: pxToRem(70px);
     }
   }
 }

@@ -1,5 +1,6 @@
 @use "../abs/colors" as *;
 @use "../abs/fonts" as *;
+@use "../abs/functions" as *;
 @use "../abs/spaces" as *;
 @use "../abs/shadows" as *;
 @use "../abs/breakpoints" as *;
@@ -28,7 +29,7 @@
 
   @include breakpoint-down(large) {
     width: 100%;
-    gap: 3rem;
+    gap: pxToRem(30px);
   }
 
   @include breakpoint-down(small) {
@@ -43,17 +44,17 @@
   text-align: center;
   border-radius: 3px;
 
-  padding: 2.5rem;
+  padding: pxToRem(25px);
   box-shadow: map-get($shadows, "subtle");
   transition: all 400ms;
 
   &:hover {
-    transform: translateY(-1.5rem) scale(1.03);
+    transform: translateY(pxToRem(-15px)) scale(1.03);
     box-shadow: map-get($shadows, "default");
   }
 
   @include breakpoint-down(large) {
-    max-width: 18.5rem;
+    max-width: pxToRem(185px);
   }
 
   @include breakpoint-down(medium) {
@@ -63,7 +64,7 @@
 
   &__icon {
     display: block;
-    font-size: map-get($font-size, "x-large");
+    font-size: 3.75rem;
     background: linear-gradient(
       to right,
       rgba($color-primary, 0.8),
@@ -75,9 +76,5 @@
 
   &__title {
     text-transform: uppercase;
-  }
-
-  &__paragraph {
-    font-size: map-get($font-size, "small");
   }
 }

@@ -1,7 +1,8 @@
 @use "./colors";
+@use "./functions" as *;
 
 $shadows: (
-  "subtle": 0 1rem 2rem rgba(colors.$color-black, 0.2),
-  "default": 0 1rem 2rem rgba(colors.$color-black, 0.4),
-  "intense": 0 1.5rem 4rem rgba(colors.$color-black, 0.4),
+  "subtle": 0 pxToRem(10px) pxToRem(20px) rgba(colors.$color-black, 0.2),
+  "default": 0 pxToRem(10px) pxToRem(20px) rgba(colors.$color-black, 0.4),
+  "intense": 0 pxToRem(15px) pxToRem(40px) rgba(colors.$color-black, 0.4),
 );

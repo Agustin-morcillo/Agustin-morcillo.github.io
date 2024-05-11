@@ -1,15 +1,17 @@
+@use "../abs/functions" as *;
+
 .u-text-center {
   text-align: center;
 }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: pxToRem(15px) !important;
 }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem !important;
+  margin-bottom: pxToRem(40px) !important;
 }
 
 .u-margin-bottom-xl {
-  margin-bottom: 8rem !important;
+  margin-bottom: pxToRem(80px) !important;
 }

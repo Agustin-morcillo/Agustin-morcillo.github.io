@@ -1,6 +1,8 @@
+@use "./functions" as *;
+
 $spaces: (
-  "x-large": 8rem,
-  "large": 6rem,
-  "medium": 3rem,
-  "small": 1rem,
+  "x-large": pxToRem(80px),
+  "large": pxToRem(60px),
+  "medium": pxToRem(30px),
+  "small": pxToRem(10px),
 );

@@ -1,5 +1,6 @@
 @use "../abs/colors" as *;
 @use "../abs/fonts" as *;
+@use "../abs/functions" as *;
 @use "../abs/breakpoints" as *;
 @use "../abs/z-index" as *;
 
@@ -23,10 +24,10 @@
 
   &__content {
     width: 75%;
-    min-width: 90rem;
+    min-width: pxToRem(900px);
     background-color: $color-white;
     border-radius: 3px;
-    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    box-shadow: 0 pxToRem(20px) pxToRem(40px) rgba($color-black, 0.2);
     display: flex;
     position: relative;
 
@@ -36,7 +37,7 @@
 
     @include breakpoint-down(medium) {
       width: 90%;
-      max-height: calc(100vh - 2rem);
+      max-height: calc(100vh - pxToRem(20px));
       overflow-y: auto;
       flex-direction: column;
       min-width: auto;
@@ -64,7 +65,7 @@
 
   &__text-container {
     width: 66.66%;
-    padding: 3rem 5rem;
+    padding: pxToRem(30px) pxToRem(50px);
     margin-block: auto;
 
     @include breakpoint-down(medium) {
@@ -73,7 +74,7 @@
     }
 
     @include breakpoint-down(small) {
-      padding: 3rem 3rem;
+      padding: pxToRem(30px) pxToRem(30px);
     }
   }
 
@@ -81,7 +82,7 @@
     font-size: map-get($font-size, "tiny");
     column-count: 2;
     column-rule: 1px solid $color-grey-light-2;
-    column-gap: 4rem;
+    column-gap: pxToRem(40px);
     hyphens: auto;
 
     @include breakpoint-down(medium) {
@@ -91,10 +92,10 @@
   }
 
   &__close-btn {
-    font-size: map-get($font-size, "large");
+    font-size: 2.25rem;
     position: absolute;
-    top: 1rem;
-    right: 2.5rem;
+    top: pxToRem(10px);
+    right: pxToRem(25px);
     display: inline-block;
     color: $color-grey-dark;
 

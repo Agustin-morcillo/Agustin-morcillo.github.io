@@ -1,12 +1,14 @@
+@use "../abs/functions" as *;
+
 @keyframes toRightLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10rem);
+    transform: translateX(pxToRem(-100px));
   }
 
   80% {
     opacity: 1;
-    transform: translateX(1rem);
+    transform: translateX(pxToRem(10px));
   }
 
   100% {
@@ -18,12 +20,12 @@
 @keyframes toLeftRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem);
+    transform: translateX(pxToRem(100px));
   }
 
   80% {
     opacity: 1;
-    transform: translateX(-1rem);
+    transform: translateX(pxToRem(-10px));
   }
 
   100% {

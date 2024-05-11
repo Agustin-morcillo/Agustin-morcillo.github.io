@@ -1,5 +1,6 @@
 @use "../abs/colors" as *;
 @use "../abs/fonts" as *;
+@use "../abs/functions" as *;
 @use "../abs/shadows" as *;
 @use "../abs/breakpoints" as *;
 @use "../layout/structure" as *;
@@ -15,7 +16,7 @@
     ),
     url("../img/form/form-bg.jpeg");
   background-size: cover;
-  border-radius: 0.3rem;
+  border-radius: 3px;
   box-shadow: map-get($shadows, "intense");
 
   @include breakpoint-down(large) {
@@ -37,7 +38,7 @@
 }
 
 .form {
-  padding: 6rem;
+  padding: pxToRem(60px);
   display: block;
 
   @include breakpoint-down(large) {
@@ -49,15 +50,15 @@
   }
 
   &__group:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: pxToRem(20px);
   }
 
   &__input {
-    font-size: map-get($font-size, "small");
+    font-size: map-get($font-size, "tiny");
     color: inherit;
     background-color: rgba($color-white, 0.5);
     width: 100%;
-    padding: 1.5rem 2rem;
+    padding: pxToRem(15px) pxToRem(20px);
     border: none;
     border-bottom: 3px solid transparent;
     border-radius: 2px;
@@ -79,23 +80,22 @@
   }
 
   &__label {
-    font-size: 1.2rem;
     font-weight: map-get($font-weight, "bold");
     display: block;
-    padding: 1rem 0 0 2rem;
+    padding: pxToRem(10px) 0 0 pxToRem(20px);
     transition: all 400ms;
   }
 
   &__input:placeholder-shown + &__label {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-4rem);
+    transform: translateY(pxToRem(-40px));
   }
 
   &__radio-group {
     display: inline-block;
     &:not(:first-child) {
-      margin-left: 1.5rem;
+      margin-left: pxToRem(15px);
     }
 
     @include breakpoint-down(medium) {
@@ -103,7 +103,7 @@
 
       &:not(:first-child) {
         margin-left: 0;
-        margin-top: 2rem;
+        margin-top: pxToRem(20px);
       }
     }
   }
@@ -115,24 +115,24 @@
   &__radio-label {
     cursor: pointer;
     position: relative;
-    padding-left: 4rem;
+    padding-left: pxToRem(40px);
   }
 
   &__radio-btn {
     display: inline-block;
-    height: 3rem;
-    width: 3rem;
+    height: pxToRem(30px);
+    width: pxToRem(30px);
     border: 5px solid $color-primary;
     border-radius: 50%;
     position: absolute;
-    top: -0.4rem;
+    top: pxToRem(-4px);
     left: 0;
 
     &::after {
       content: "";
       display: block;
-      width: 1.3rem;
-      height: 1.3rem;
+      width: pxToRem(13px);
+      height: pxToRem(13px);
       border-radius: inherit;
       background-color: $color-primary;
       position: absolute;

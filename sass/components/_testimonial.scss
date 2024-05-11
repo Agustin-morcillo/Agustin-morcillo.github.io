@@ -1,5 +1,6 @@
 @use "../abs/colors" as *;
 @use "../abs/fonts" as *;
+@use "../abs/functions" as *;
 @use "../abs/shadows" as *;
 @use "../abs/breakpoints" as *;
 @use "../layout/structure" as *;
@@ -20,10 +21,10 @@
   box-shadow: map-get($shadows, "intense");
   background-color: rgba($color-white, 0.6);
   border-radius: 3px;
-  padding: 6rem;
-  font-size: map-get($font-size, "default");
+  padding: pxToRem(60px);
+  font-size: map-get($font-size, "tiny");
   display: flex;
-  gap: 3rem;
+  gap: pxToRem(30px);
 
   transform: skewX(-12deg);
 
@@ -40,12 +41,12 @@
     transform: skewX(0);
     flex-direction: column;
     align-items: center;
-    padding: 4rem;
+    padding: pxToRem(40px);
   }
 
   &__image-container {
-    width: 15rem;
-    height: 15rem;
+    width: pxToRem(150px);
+    height: pxToRem(150px);
     clip-path: circle(50%);
     position: relative;
   }

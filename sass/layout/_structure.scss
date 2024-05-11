@@ -1,5 +1,6 @@
 @use "../abs/colors" as *;
 @use "../abs/spaces" as *;
+@use "../abs/functions" as *;
 @use "../abs/breakpoints" as *;
 
 body {
@@ -13,11 +14,11 @@ body {
 
 @mixin grid {
   display: flex;
-  max-width: 114rem;
+  max-width: pxToRem(1140px);
   gap: map-get($spaces, "large");
 
   @include breakpoint-down(medium) {
-    max-width: 50rem;
+    max-width: pxToRem(500px);
     width: 100%;
     flex-direction: column;
     align-items: center;

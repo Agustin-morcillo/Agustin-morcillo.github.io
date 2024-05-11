@@ -1,9 +1,10 @@
 @use "../abs/colors" as *;
+@use "../abs/functions" as *;
+@use "../abs/breakpoints" as *;
 @use "../abs/fonts" as *;
 @use "../abs/spaces" as *;
 
 body {
-  font-size: map-get($font-size, "default");
   font-family: $font-stack;
   font-weight: map-get($font-weight, "regular");
   color: $color-grey-dark;
@@ -14,17 +15,59 @@ h1 {
   font-size: map-get($font-size, "x-large");
   font-weight: map-get($font-weight, "regular");
   margin-bottom: map-get($spaces, "large");
+
+  @include breakpoint-up(xlarge) {
+    font-size: map-get($font-size, "xx-large");
+  }
+
+  @include breakpoint-down(medium) {
+    font-size: map-get($font-size, "large");
+  }
+  @include breakpoint-down(small) {
+    font-size: map-get($font-size, "s-large");
+  }
 }
 
 h2 {
-  font-size: map-get($font-size, "large");
+  font-size: map-get($font-size, "xx-medium");
   font-weight: map-get($font-weight, "bold");
   margin-bottom: map-get($spaces, "x-large");
+
+  @include breakpoint-up(xlarge) {
+    font-size: map-get($font-size, "s-large");
+  }
+
+  @include breakpoint-down(small) {
+    font-size: map-get($font-size, "medium");
+  }
 }
 
 h3 {
-  font-size: map-get($font-size, "default");
+  font-size: map-get($font-size, "tiny");
   font-weight: map-get($font-weight, "bold");
   color: $color-grey-dark;
   margin-bottom: map-get($spaces, "small");
+
+  @include breakpoint-up(xlarge) {
+    font-size: map-get($font-size, "normal");
+  }
+
+  @include breakpoint-down(small) {
+    font-size: map-get($font-size, "tiny");
+  }
+}
+
+p,
+a,
+li,
+label {
+  font-size: map-get($font-size, "tiny");
+
+  @include breakpoint-up(xlarge) {
+    font-size: map-get($font-size, "normal");
+  }
+
+  @include breakpoint-down(small) {
+    font-size: map-get($font-size, "tiny");
+  }
 }

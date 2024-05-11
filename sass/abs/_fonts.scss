@@ -1,3 +1,5 @@
+@use "./functions" as *;
+
 $font-stack: "Lato", sans-serif;
 
 $font-weight: (
@@ -9,10 +11,13 @@ $font-weight: (
 );
 
 $font-size: (
-  "x-large": 6rem,
-  "large": 3.5rem,
-  "medium": 2.8rem,
-  "default": 1.6rem,
-  "small": 1.5rem,
-  "tiny": 1.4rem,
+  "xx-large": pxToRem(72px),
+  "x-large": pxToRem(60px),
+  "large": pxToRem(54px),
+  "s-large": pxToRem(44px),
+  "xx-medium": pxToRem(36px),
+  "medium": pxToRem(28px),
+  "normal": pxToRem(18px),
+  "small": pxToRem(16px),
+  "tiny": pxToRem(14px),
 );

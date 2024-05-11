@@ -1,5 +1,6 @@
 @use "../abs/colors" as *;
 @use "../abs/fonts" as *;
+@use "../abs/functions" as *;
 @use "../abs/breakpoints" as *;
 @use "../base/animations";
 
@@ -11,6 +12,10 @@
     ),
     url("../img/header/hero-image.jpg") top / cover;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @include breakpoint-up(xlarge) {
     background: linear-gradient(
@@ -33,19 +38,23 @@
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   }
 
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   &__logo-container {
     position: absolute;
-    top: 4rem;
-    left: 4rem;
+    top: pxToRem(40px);
+    left: pxToRem(40px);
+
+    @include breakpoint-down(small) {
+      top: pxToRem(32px);
+      left: pxToRem(32px);
+    }
   }
 
   &__logo {
-    height: 3.5rem;
+    height: pxToRem(35px);
+
+    @include breakpoint-down(small) {
+      height: pxToRem(28px);
+    }
   }
 
   &__content {
@@ -53,7 +62,11 @@
     color: $color-white;
     text-transform: uppercase;
     position: relative;
-    bottom: 8.6rem;
+    bottom: pxToRem(86px);
+
+    @include breakpoint-down(small) {
+      bottom: pxToRem(20px);
+    }
   }
 
   &__primary--main,
@@ -62,24 +75,29 @@
   }
 
   &__primary--main {
-    letter-spacing: 3.5rem;
-    margin-right: -3.5rem;
+    letter-spacing: pxToRem(35px);
+    margin-right: pxToRem(-35px);
     animation: toRightLeft 1s;
 
     @include breakpoint-down(small) {
-      letter-spacing: 0.5rem;
-      margin-right: -0.5rem;
+      letter-spacing: pxToRem(5px);
+      margin-right: pxToRem(5px);
     }
   }
 
   &__primary--sub {
-    font-size: 2rem;
+    font-size: map-get($font-size, "normal");
     font-weight: map-get($font-weight, "bold");
-    letter-spacing: 1.5rem;
-    margin-right: -1.5em;
+    letter-spacing: pxToRem(15px);
+    margin-right: pxToRem(-15px);
     animation: toLeftRight 1s;
 
+    @include breakpoint-up(xlarge) {
+      font-size: map-get($font-size, "medium");
+    }
+
     @include breakpoint-down(small) {
+      font-size: map-get($font-size, "small");
       letter-spacing: normal;
       margin-right: 0;
     }
