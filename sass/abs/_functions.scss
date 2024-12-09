@@ -4,12 +4,15 @@ $html-font-size: 16px;
 
 // Function to strip the unit from a value (e.g., "px" or "em")
 @function stripUnit($value) {
-  // Divide the value by itself with the unit stripped to get the numerical value
+  // Use math.div() for division
   @return math.div($value, ($value * 0 + 1));
 }
 
-// Function to convert pixel value to rem
+// Function to convert pixel value to rem with max 2 decimal places
 @function pxToRem($pxValue) {
-  // Divide the pixel value by the base font size (html-font-size) to get the rem value
-  @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size))}rem;
+  // Use math.div() for division
+  $rem-value: math.div(stripUnit($pxValue), stripUnit($html-font-size));
+
+  // Round the rem value to 2 decimal places using math.div()
+  @return math.div(math.round($rem-value * 100), 100) + rem;
 }
